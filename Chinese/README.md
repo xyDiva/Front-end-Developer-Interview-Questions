@@ -243,12 +243,18 @@ var person = new Person();
 ```javascript
 [1,2,3,4,5].duplicator(); // [1,2,3,4,5,1,2,3,4,5]
 ```
-    * arr.concat(arr);
+    * A：
+```
+Array.prototype.duplicator = function(){
+    var arr = this;
+    return arr.concat(arr);
+}
+```
 
 * 描述一种 JavaScript 中实现 memoization(避免重复运算)的策略。
 
 * 什么是三元表达式？“三元” 表示什么意思？
-    * test ? expression1 : expression2
+    * condition ? expression1 : expression2
     * 三元操作符
 
 * 函数的参数元是什么？
