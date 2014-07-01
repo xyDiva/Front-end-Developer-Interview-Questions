@@ -195,6 +195,8 @@ var person = new Person();
 ```
 
 * `.call` 和 `.apply` 的区别是什么？
+    * call
+    * apply
 
 * 请解释 `Function.prototype.bind` 的作用？
 
@@ -260,6 +262,8 @@ Array.prototype.duplicator = function(){
 
 * 什么是 `"use strict";` ? 使用它的好处和坏处分别是什么？
     * 严格模式
+    * 好处:提升代码质量，便于调试
+    * 坏处:部分浏览器不支持，
 
 ####<a name='jquery'>jQuery 相关问题：</a>
 
