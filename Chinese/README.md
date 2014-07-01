@@ -243,7 +243,6 @@ var person = new Person();
 ```javascript
 [1,2,3,4,5].duplicator(); // [1,2,3,4,5,1,2,3,4,5]
 ```
-    * A：
 ```
 Array.prototype.duplicator = function(){
     var arr = this;
