@@ -155,6 +155,7 @@
 
 * 解释下事件代理。
 
+
 * 解释下 JavaScript 中 `this` 是如何工作的。
 
 * 解释下原型继承的原理。
@@ -167,9 +168,12 @@
 
 * 解释下为什么接下来这段代码不是 IIFE(立即调用的函数表达式)：`function foo(){ }();`. 
   * 要做哪些改动使它变成 IIFE?
+  * (function foo(){})();
   
 * 描述以下变量的区别：`null`，`undefined` 或 `undeclared`？
   * 该如何检测它们？
+  * typeof null -> object
+  * typeof undefined -> undefined
   
 * 什么是闭包，如何使用它，为什么要使用它？
 
@@ -209,10 +213,13 @@ var person = new Person();
 
 * 你使用过 JavaScript 模板系统吗？
 	* 如有使用过，请谈谈你都使用过哪些库，比如 Mustache.js，Handlebars 等等。
+	* jquery.template
 
 * 请解释变量声明提升。
+    * javascript的变量声明具有hoisting机制，JavaScript引擎在执行的时候，会把所有变量的声明都提升到当前作用域的最前面。
 
 * 请描述下事件冒泡机制。
+    * [JavaScript事件代理和委托（Delegation）](http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html)
 
 * "attribute" 和 "property" 的区别是什么？
 
@@ -223,6 +230,8 @@ var person = new Person();
 * 请指出 document load 和 document ready 两个事件的区别。
 
 * `==` 和 `===` 有什么不同？
+    * == equality 等同 当两边值类型不同时，先做类型转换，再比较
+    * === identity 恒等 当两边值类型不同时，返回false
 
 * 你如何从浏览器的 URL 中获取查询字符串参数。
 
@@ -234,14 +243,18 @@ var person = new Person();
 ```javascript
 [1,2,3,4,5].duplicator(); // [1,2,3,4,5,1,2,3,4,5]
 ```
+    * arr.concat(arr);
 
 * 描述一种 JavaScript 中实现 memoization(避免重复运算)的策略。
 
 * 什么是三元表达式？“三元” 表示什么意思？
+    * test ? expression1 : expression2
+    * 三元操作符
 
 * 函数的参数元是什么？
 
 * 什么是 `"use strict";` ? 使用它的好处和坏处分别是什么？
+    * 严格模式
 
 ####<a name='jquery'>jQuery 相关问题：</a>
 
@@ -252,6 +265,7 @@ var person = new Person();
 * 你知道哪些针对 jQuery 的优化方法。
 
 * 请解释 `.end()` 的用途。
+    * 结束当前链条中的最近的筛选操作，并将匹配元素集还原为之前的状态。
 
 * 你如何给一个事件处理函数命名空间，为什么要这样做？
 
@@ -261,15 +275,23 @@ var person = new Person();
 * 什么是效果队列？
 
 * 请指出 `.get()`，`[]`，`eq()` 的区别。
+    * get 返回的是html对象数组
+    * eq 返回的是jquery对象
 
 * 请指出 `.bind()`，`.live()` 和 `.delegate()` 的区别。
+    * bind 绑定在选择器所筛选出来的每个元素上
+    * live 绑定在document上，也可自定义绑定在某个元素上
+    * delegate
 
 * 请指出 `$` 和 `$.fn` 的区别，或者说出 `$.fn` 的用途。
+    * $ jquery
+    * $.fn jquery.fn == $.prototype
 
 * 请优化下列选择器：
 ```javascript
 $(".foo div#bar:eq(0)")
 ```
+    * $('#bar:first')
 
 ####<a name='jscode'>代码相关的问题：</a>
 
@@ -324,8 +346,10 @@ foo.bar = 'hello';
 * 你编写过的最酷的代码是什么？其中你最自豪的是什么？
 
 * 在你使用过的开发工具中，最喜欢哪个？
+    * intellij idea/webstorm
 
 * 你有什么业余项目吗？是哪种类型的？
+    * nodejs+mongodb
 
 * 你最爱的 IE 特性是什么？
 
