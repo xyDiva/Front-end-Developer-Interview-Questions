@@ -114,10 +114,19 @@
 ####<a name='css'>CSS 相关问题：</a>
 
 * 描述下 “reset” CSS 文件的作用和使用它的好处。
+    * 清除html标签的默认样式并重新定义
 
 * 解释下浮动和它的工作原理。
+    * 浮动元素脱离文档流，向左或者向右紧靠相邻的浮动元素或者父元素。
 
 * 列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。
+    * 采用一个HTML标签，以及css的clear属性，来手工清理浮动；
+    * 采用伪类:after，动态建立一个块元素，设定 clear 属性，清理之前的浮动元素；
+    * 采用CSS overflow 非 visible 值(overflow:auto/overflow:hidden)设定使父容器包含浮动元素；
+    * 采用display:table/display:table-cell 等table系列属性将父元素变成 table 形式自动包含浮动元素；
+    * 使用 TABLE 以及 TD 标签作为浮动元素容器；
+    * 采用 float:left/float:right 方式将父元素同样浮动，就可以包含浮动内容；
+    * 在 IE 6/7 的标准文档模式中设置 “width/height/zoom” 等样式来自动清理浮动。
 
 * 解释下 CSS sprites，以及你要如何在页面或网站中使用它。
 
@@ -126,7 +135,7 @@
 * 讨论CSS hacks，条件引用或者其他。
 
 * 如何为有功能限制的浏览器提供网页？
-  * 你会使用哪些技术和处理方法？
+    * 你会使用哪些技术和处理方法？
   
 * 有哪些的隐藏内容的方法（如果同时还要保证屏幕阅读器可用呢？）
 
@@ -137,28 +146,39 @@
 * 你熟悉 SVG 样式的书写吗？
 
 * 如何优化网页的打印样式？
+    * <link href="x.css" rel="stylesheet" media="print" />
+    * 行内样式
 
 * 在书写高效 CSS 时会有哪些问题需要考虑？
 
 * 使用 CSS 预处理器的优缺点有哪些？(SASS，Compass，Stylus，LESS)
-  * 描述下你曾经使用过的 CSS 预处理的优缺点。
+    * 描述下你曾经使用过的 CSS 预处理的优缺点。
   
 * 如果设计中使用了非标准的字体，你该如何去实现？
-  * Webfonts (字体服务例如：Google Webfonts，Typekit 等等。)
+    * Webfonts (字体服务例如：Google Webfonts，Typekit 等等。)
   
 * 解释下浏览器是如何判断元素是否匹配某个 CSS 选择器？
+    * 浏览器css匹配顺序是从右往左
 
 * 解释一下你对盒模型的理解，以及如何在 CSS 中告诉浏览器使用不同的盒模型来渲染你的布局。
+    * 为了给文档中各个元素排版定位，浏览器会根据渲染模型为每个元素生成四个嵌套的矩形框：content/padding/border/margin
+    * 标准盒模型：content不包含padding和border
+    * IE盒模型：content包含padding和border
 
 
 ####<a name='js'>JS相关问题：</a>
 
 * 解释下事件代理。
-
+    * 事件代理也叫做事件委托，它利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。
 
 * 解释下 JavaScript 中 `this` 是如何工作的。
+    * this对象是在运行时基于函数的执行环境绑定的：
+        * 在全局函数中，this等于window；
+        * 而当函数被作为某个对象的方法调用时，this等于那个对象；
+        * 匿名函数的执行环境具有全局性，因此其this通常指向window
 
 * 解释下原型继承的原理。
+    *
 
 * 你是如何测试JavaScript代码的？
 
